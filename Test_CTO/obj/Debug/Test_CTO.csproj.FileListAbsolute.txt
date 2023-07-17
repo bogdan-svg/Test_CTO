@@ -1,0 +1,8 @@
+C:\Users\b.gaiko\Desktop\Test_CTO\Test_CTO\bin\Debug\Test_CTO.exe.config
+C:\Users\b.gaiko\Desktop\Test_CTO\Test_CTO\bin\Debug\Test_CTO.exe
+C:\Users\b.gaiko\Desktop\Test_CTO\Test_CTO\bin\Debug\Test_CTO.pdb
+C:\Users\b.gaiko\Desktop\Test_CTO\Test_CTO\obj\Debug\Test_CTO.csproj.AssemblyReference.cache
+C:\Users\b.gaiko\Desktop\Test_CTO\Test_CTO\obj\Debug\Test_CTO.csproj.SuggestedBindingRedirects.cache
+C:\Users\b.gaiko\Desktop\Test_CTO\Test_CTO\obj\Debug\Test_CTO.csproj.CoreCompileInputs.cache
+C:\Users\b.gaiko\Desktop\Test_CTO\Test_CTO\obj\Debug\Test_CTO.exe
+C:\Users\b.gaiko\Desktop\Test_CTO\Test_CTO\obj\Debug\Test_CTO.pdb
