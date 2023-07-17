@@ -11,7 +11,7 @@ namespace Test_CTO
     {
         static void Main(string[] args)
         {
-            Input input;
+            Input input = new Input(); ;
             DataBase dataBase = new DataBase();
             bool a = true;
             while (a)
@@ -20,8 +20,7 @@ namespace Test_CTO
                 decimal.TryParse(Console.ReadLine(), out var decimalValue);
                 switch (decimalValue)
                 {
-                    case 1:
-                        input = new Input();
+                    case 1:                        
                         input.InputTruck();
                         break;
                     case 2:

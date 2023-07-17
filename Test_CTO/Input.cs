@@ -14,7 +14,7 @@ namespace Test_CTO
             truck.InputCarBrand();
             //truck.InputCarModel();
             //truck.AddDamages();
-            AddTrucks(truck);
+            trucks.Add(truck);
         }
 
         
