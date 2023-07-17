@@ -10,14 +10,38 @@ namespace Test_CTO
     internal class Program
     {
         static void Main(string[] args)
-        {            
-            Truck truck = new Truck();
-            truck.InputName();
-            truck.AddDamages();                                               
-            foreach(var car in truck)
+        {
+            Input input;
+            DataBase dataBase = new DataBase();
+            bool a = true;
+            while (a)
             {
-                car.OutputName();
+                Console.WriteLine("Enter :\n1. input\n2. output");
+                decimal.TryParse(Console.ReadLine(), out var decimalValue);
+                switch (decimalValue)
+                {
+                    case 1:
+                        input = new Input();
+                        input.InputTruck();
+                        break;
+                    case 2:
+                        dataBase.OutputTruck();
+                        //input = new Input();
+                        //input.OutputTruck();
+                        break;
+                    case 3:
+                        a = false;
+                        break;
+                    default:
+                        Console.WriteLine("default");
+                        break;
+                }
             }
+            
+            //foreach(var car in truck)
+            //{
+            //    car.OutputName();
+            //}
         }
     }
 }

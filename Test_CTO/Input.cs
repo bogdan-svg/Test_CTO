@@ -6,22 +6,17 @@ using System.Threading.Tasks;
 
 namespace Test_CTO
 {
-    internal class Input
-    {
-        List<Truck> trucks = new List<Truck>();
-
+    internal class Input : DataBase
+    {        
         public void InputTruck() 
         {
             Truck truck = new Truck();
             truck.InputCarBrand();
-            truck.InputCarModel();
-            truck.AddDamages();
-            trucks.Add(truck);
+            //truck.InputCarModel();
+            //truck.AddDamages();
+            AddTrucks(truck);
         }
 
-        public void Output()
-        {
-
-        }
+        
     }
 }

@@ -24,7 +24,7 @@ namespace Test_CTO
 
         public string InputCarBrand()
         {
-            Console.Write("Enter Car Brand");
+            Console.Write("Enter Car Brand - ");
             this.CarBrand = Console.ReadLine();
             return CarBrand;
         }
@@ -32,11 +32,12 @@ namespace Test_CTO
         public void OutputCarBrand()
         {
             Console.WriteLine($"Car brand - {this.CarBrand}");
+            Console.ReadKey();
         }
-        
+
         public string InputCarModel()
         {
-            Console.Write("Enter Car Model");
+            Console.Write("Enter Car Model - ");
             this.CarBrand = Console.ReadLine();
             return CarModel;
         }
@@ -50,14 +51,16 @@ namespace Test_CTO
         {            
             DamagesList = new List<IDamages>();            
             damages.InputType();
-            damages.InputDecimal();                      
+            damages.InputPriceDetails();
+            damages.InputPriceWork();
             DamagesList.Add(damages);            
         }
 
         public void OutDamages()
         {
             damages.OutputType();
-            damages.OutputDecimal();            
+            damages.OutputPriceDetails();
+            damages.OutputPriceWork();
         }
 
         

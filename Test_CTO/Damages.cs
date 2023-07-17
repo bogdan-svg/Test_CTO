@@ -16,13 +16,13 @@ namespace Test_CTO
         public decimal PriceWork { get; set; }
 
         public decimal PriceDetails { get; set; }
-
+        
         public string InputType()
         {
-            Console.WriteLine("Enter type:");
+            var count = 1;
+            Console.Write("Enter type: \n");
             foreach (var item in Enum.GetValues(typeof(_Type)))
-            {
-                var count = 1;
+            {                
                 Console.WriteLine($"{count} - {item.ToString()}");
                 count++;
             }
@@ -48,7 +48,7 @@ namespace Test_CTO
 
         public decimal InputPriceWork()
         {
-            this.PriceWork= InputDecimal();
+            this.PriceWork = InputDecimal();
             return PriceWork;
         }
 
@@ -69,12 +69,13 @@ namespace Test_CTO
         }
 
         public decimal InputDecimal()
-        {
+        {            
             Console.Write("Enter price - ");
             bool parseOK = decimal.TryParse(Console.ReadLine(), out var type);
             if (parseOK == true || type >= 0)
             {
-                this.PriceWork = Convert.ToDecimal(Console.ReadLine());
+                Console.WriteLine("OK");
+                this.PriceWork = type;
                 return PriceWork;
             }
             else
