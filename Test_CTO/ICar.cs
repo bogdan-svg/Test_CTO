@@ -8,8 +8,10 @@ namespace Test_CTO
 {
     internal interface ICar
     {
-        string Name { get; set; }
+        string CarModel { get; }
 
-        List<IDamages> Damages { get; set; }
+        string CarBrand { get; set; }
+
+        List<IDamages> DamagesList { get; set; }        
     }
 }

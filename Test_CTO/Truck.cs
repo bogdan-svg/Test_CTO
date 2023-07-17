@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,66 +9,58 @@ namespace Test_CTO
 {
     internal class Truck : ICar
     {
-        public string Name { get; set; }
+        public string CarBrand { get; set; }
 
-        public List<IDamages> Damages { get; set; }
+        public string CarModel { get; set; }        
 
-        private Damages damages = new Damages();
+        public List<IDamages> DamagesList { get; set; }
 
-        private int DamageIndex = 0; 
+        Damages damages = new Damages();
 
-        public IDamages this[int index]
+        public IEnumerator GetEnumerator()
         {
-            get
-            {
-                DamageIndex = index;
-                return Damages[index];
-            }// => Damages[index];  
-            set => Damages[index] = value;
+            yield return this;
         }
 
-        public Enumerator GetEnumerator()
+        public string InputCarBrand()
         {
-            return new Enumerator();
+            Console.Write("Enter Car Brand");
+            this.CarBrand = Console.ReadLine();
+            return CarBrand;
         }
 
-        public string InputName()
+        public void OutputCarBrand()
         {
-            Console.WriteLine("Enter name");
-            this.Name = Console.ReadLine();
-            return Name;
-        }
-        public void OutputName()
-        {
-            Console.WriteLine($"Car name - {this.Name}");
+            Console.WriteLine($"Car brand - {this.CarBrand}");
         }
         
+        public string InputCarModel()
+        {
+            Console.Write("Enter Car Model");
+            this.CarBrand = Console.ReadLine();
+            return CarModel;
+        }
+
+        public void OutputCarModel()
+        {
+            Console.WriteLine($"Car brand - {this.CarModel}");
+        }
+
         public void AddDamages()
-        {
-            Damages = new List<IDamages>();
-            var someTruck = new Damages();
-            someTruck.InputType();
-            someTruck.InputDecimal();
-            Console.WriteLine(DamageIndex);
-            Console.WriteLine(Damages.IndexOf(someTruck));
-            Console.ReadKey();
-            Damages.Add(someTruck);            
+        {            
+            DamagesList = new List<IDamages>();            
+            damages.InputType();
+            damages.InputDecimal();                      
+            DamagesList.Add(damages);            
         }
 
-        public void OutputDamages()
+        public void OutDamages()
         {
-            foreach ( var damage in Damages )
-            {
-                
-                
-                Console.Clear();
-                Console.WriteLine($"number = {DamageIndex}");
-                Console.WriteLine($"Price is = {damage.Price}");
-                Console.WriteLine($"Type is = {damage.Type}");
-
-            }
-            
+            damages.OutputType();
+            damages.OutputDecimal();            
         }
+
+        
 
     }
 }

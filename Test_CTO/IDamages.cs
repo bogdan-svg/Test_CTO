@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Test_CTO
 {
+    enum _Type { crash = 1, scratch , broken };
     internal interface IDamages
     {
-        string Type { get; set; }
+        string TypeDamage { get; set; }
 
-        decimal Price { get; set; }
+        decimal PriceWork { get; set; }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,33 +11,77 @@ namespace Test_CTO
 {
     internal class Damages : IDamages
     {
-        public string Type { get; set; }
+        public string TypeDamage { get; set; }
 
-        public decimal Price { get; set; }
+        public decimal PriceWork { get; set; }
 
+        public decimal PriceDetails { get; set; }
 
         public string InputType()
         {
-            Console.WriteLine("Enter type - ");
-            this.Type = Console.ReadLine();
-            return Type;
+            Console.WriteLine("Enter type:");
+            foreach (var item in Enum.GetValues(typeof(_Type)))
+            {
+                var count = 1;
+                Console.WriteLine($"{count} - {item.ToString()}");
+                count++;
+            }
+            while(true)
+            {
+                bool parseOK = byte.TryParse(Console.ReadLine(), out var type);
+                if (type > 0 || type < Enum.GetValues(typeof(_Type)).Length || parseOK == true)
+                {
+                    this.TypeDamage = Convert.ToString((_Type)type);
+                    return this.TypeDamage;
+                }
+                else
+                {
+                    return "test esle !(";
+                }
+            }            
         }
 
         public void OutputType() 
         {
-            Console.WriteLine($"Type - {this.Type}");
+            Console.WriteLine($"Type - {this.TypeDamage}");
+        }
+
+        public decimal InputPriceWork()
+        {
+            this.PriceWork= InputDecimal();
+            return PriceWork;
+        }
+
+        public void OutputPriceWork()
+        {
+            Console.WriteLine($"Price work = {this.PriceWork}");
+        }
+
+        public decimal InputPriceDetails()
+        {
+            this.PriceDetails = InputDecimal();
+            return PriceDetails;
+        }
+
+        public void OutputPriceDetails()
+        {
+            Console.WriteLine($"Price details = {this.PriceDetails}");
         }
 
         public decimal InputDecimal()
         {
-            Console.WriteLine("Enter price - ");
-            this.Price = Convert.ToDecimal( Console.ReadLine() );
-            return Price;
-        }
+            Console.Write("Enter price - ");
+            bool parseOK = decimal.TryParse(Console.ReadLine(), out var type);
+            if (parseOK == true || type >= 0)
+            {
+                this.PriceWork = Convert.ToDecimal(Console.ReadLine());
+                return PriceWork;
+            }
+            else
+            {
+                return 0;
+            }
 
-        public void OutputDecimal()
-        {
-            Console.WriteLine($"Price = {this.Price}");
-        }
+        }               
     }
 }

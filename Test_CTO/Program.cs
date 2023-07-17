@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,22 +10,13 @@ namespace Test_CTO
     internal class Program
     {
         static void Main(string[] args)
-        {
-            List<Truck> trucks = new List<Truck>();
-            var truck = new Truck();
+        {            
+            Truck truck = new Truck();
             truck.InputName();
-            truck.AddDamages();            
-            trucks.Add(truck); 
-            
+            truck.AddDamages();                                               
             foreach(var car in truck)
             {
-                Console.WriteLine(truck);
-                
-                Console.ReadKey();
-                //car.
-                //car.OutputName();
-                //car.OutputDamages();
-                //Console.WriteLine($"Hohohoho {Convert.ToString(trucks[0])}");
+                car.OutputName();
             }
         }
     }
