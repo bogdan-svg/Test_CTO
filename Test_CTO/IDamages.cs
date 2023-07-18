@@ -9,8 +9,10 @@ namespace Test_CTO
     enum _Type { crash = 1, scratch , broken };
     internal interface IDamages
     {
-        string TypeDamage { get; set; }
+        string TypeDamage { get; }
 
-        decimal PriceWork { get; set; }
+        decimal PriceWork { get; }
+
+        decimal PriceDetails { get; }
     }
 }

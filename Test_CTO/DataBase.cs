@@ -8,29 +8,24 @@ namespace Test_CTO
 {
     internal class DataBase
     {
-        protected List<Truck> trucks = new List<Truck>();
+        protected static List<Truck> trucks = new List<Truck>();
 
-        protected void AddTrucks(Truck truck)
-        {            
-            trucks.Add(truck);
-        }
-
-        public void OutputTruck()
-        {
-            foreach (var item in trucks)
-            {
-                item.OutputCarBrand();
-                //item.OutputCarModel();
-                //item.OutDamages();
-                Console.ReadKey();
-            }
-
-        }
-
-        protected Truck this[int index]
+        public Truck this[int index]
         {
             get => trucks[index];
             set => trucks[index] = value;
         }
+
+
+
+
+        //protected void AddTrucks(Truck truck)
+        //{            
+        //    trucks.Add(truck);
+        //}        
+
+
+
+
     }
 }

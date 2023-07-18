@@ -13,9 +13,12 @@ namespace Test_CTO
         {
             Input input = new Input(); ;
             DataBase dataBase = new DataBase();
+            Output output = new Output();
+            ChangingValue changingValue = new ChangingValue();
             bool a = true;
             while (a)
             {
+                
                 Console.WriteLine("Enter :\n1. input\n2. output");
                 decimal.TryParse(Console.ReadLine(), out var decimalValue);
                 switch (decimalValue)
@@ -24,7 +27,9 @@ namespace Test_CTO
                         input.InputTruck();
                         break;
                     case 2:
-                        dataBase.OutputTruck();
+                        //output.OutputTrucks();
+                        changingValue.ChangingTruck();
+                        //dataBase.OutputTruck();
                         //input = new Input();
                         //input.OutputTruck();
                         break;

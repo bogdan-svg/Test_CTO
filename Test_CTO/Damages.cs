@@ -11,11 +11,11 @@ namespace Test_CTO
 {
     internal class Damages : IDamages
     {
-        public string TypeDamage { get; set; }
+        public string TypeDamage { get; private set; }
 
-        public decimal PriceWork { get; set; }
+        public decimal PriceWork { get; private set; }
 
-        public decimal PriceDetails { get; set; }
+        public decimal PriceDetails { get; private set; }
         
         public string InputType()
         {
@@ -83,6 +83,11 @@ namespace Test_CTO
                 return 0;
             }
 
-        }               
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            yield return this;
+        }
     }
 }

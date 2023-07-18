@@ -10,8 +10,8 @@ namespace Test_CTO
     {
         string CarModel { get; }
 
-        string CarBrand { get; set; }
+        string CarBrand { get; }
 
-        List<IDamages> DamagesList { get; set; }        
+        List<IDamages> DamagesList { get; }        
     }
 }

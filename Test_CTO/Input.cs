@@ -11,9 +11,9 @@ namespace Test_CTO
         public void InputTruck() 
         {
             Truck truck = new Truck();
-            truck.InputCarBrand();
-            //truck.InputCarModel();
-            //truck.AddDamages();
+            //truck.inputcarbrand();
+            //truck.inputcarmodel();
+            //truck.adddamages();
             trucks.Add(truck);
         }
 

@@ -9,18 +9,31 @@ namespace Test_CTO
 {
     internal class Truck : ICar
     {
-        public string CarBrand { get; set; }
-
-        public string CarModel { get; set; }        
-
-        public List<IDamages> DamagesList { get; set; }
-
         Damages damages = new Damages();
 
-        public IEnumerator GetEnumerator()
+        public string CarBrand { get; private set; }
+
+        public string CarModel { get; private set; }        
+
+        public List<IDamages> DamagesList { get; private set; }
+
+        public Truck()
         {
-            yield return this;
+            this.CarBrand = InputCarBrand();
+            this.CarModel = InputCarModel();
+            DamagesList = new List<IDamages>()
+            {
+                AddDamages()
+            };            
         }
+
+        public IDamages this[int index]
+        {
+            get => DamagesList[index];
+            set => DamagesList[index] = value;
+        }
+        
+       
 
         public string InputCarBrand()
         {
@@ -31,29 +44,27 @@ namespace Test_CTO
 
         public void OutputCarBrand()
         {
-            Console.WriteLine($"Car brand - {this.CarBrand}");
-            Console.ReadKey();
+            Console.WriteLine($"Car brand - {this.CarBrand}");            
         }
 
         public string InputCarModel()
         {
             Console.Write("Enter Car Model - ");
-            this.CarBrand = Console.ReadLine();
+            this.CarModel = Console.ReadLine();
             return CarModel;
         }
 
         public void OutputCarModel()
         {
-            Console.WriteLine($"Car brand - {this.CarModel}");
+            Console.WriteLine($"Car model - {this.CarModel}");
         }
 
-        public void AddDamages()
-        {            
-            DamagesList = new List<IDamages>();            
+        public Damages AddDamages()
+        {                                 
             damages.InputType();
             damages.InputPriceDetails();
             damages.InputPriceWork();
-            DamagesList.Add(damages);            
+            return damages;            
         }
 
         public void OutDamages()
@@ -61,9 +72,13 @@ namespace Test_CTO
             damages.OutputType();
             damages.OutputPriceDetails();
             damages.OutputPriceWork();
+            Console.WriteLine("ReadKey");
+            Console.ReadKey();
         }
-
-        
-
+       
+        public IEnumerator GetEnumerator()
+        {
+            yield return this;
+        }
     }
 }
