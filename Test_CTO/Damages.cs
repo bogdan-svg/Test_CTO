@@ -48,6 +48,7 @@ namespace Test_CTO
 
         public decimal InputPriceWork()
         {
+            Console.Write("Enter Price Work - ");
             this.PriceWork = InputDecimal();
             return PriceWork;
         }
@@ -59,6 +60,7 @@ namespace Test_CTO
 
         public decimal InputPriceDetails()
         {
+            Console.Write("Enter Price Details - ");
             this.PriceDetails = InputDecimal();
             return PriceDetails;
         }
@@ -69,14 +71,11 @@ namespace Test_CTO
         }
 
         public decimal InputDecimal()
-        {            
-            Console.Write("Enter price - ");
+        {                        
             bool parseOK = decimal.TryParse(Console.ReadLine(), out var type);
             if (parseOK == true || type >= 0)
-            {
-                Console.WriteLine("OK");
-                this.PriceWork = type;
-                return PriceWork;
+            {                
+                return type;
             }
             else
             {

@@ -13,5 +13,6 @@ namespace Test_CTO
         string CarBrand { get; }
 
         List<IDamages> DamagesList { get; }        
+        
     }
 }

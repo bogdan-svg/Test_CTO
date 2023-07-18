@@ -21,8 +21,10 @@ namespace Test_CTO
 
                 if (i == someByte)
                 {
+                    dataBase[i].TestChangDamage();
+                    dataBase[i].OutDamages();
                     //truck[someByte]
-                    Test(someByte);
+                    //Test(someByte);
                     //dataBase[i].OutDamages();
                 }
                 else

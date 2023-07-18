@@ -15,25 +15,13 @@ namespace Test_CTO
 
         public string CarModel { get; private set; }        
 
-        public List<IDamages> DamagesList { get; private set; }
-
-        public Truck()
-        {
-            this.CarBrand = InputCarBrand();
-            this.CarModel = InputCarModel();
-            DamagesList = new List<IDamages>()
-            {
-                AddDamages()
-            };            
-        }
+        public List<IDamages> DamagesList { get; private set; }        
 
         public IDamages this[int index]
         {
             get => DamagesList[index];
             set => DamagesList[index] = value;
-        }
-        
-       
+        }              
 
         public string InputCarBrand()
         {
@@ -59,12 +47,13 @@ namespace Test_CTO
             Console.WriteLine($"Car model - {this.CarModel}");
         }
 
-        public Damages AddDamages()
-        {                                 
+        public void AddDamages()
+        {
+            DamagesList = new List<IDamages>();
             damages.InputType();
             damages.InputPriceDetails();
             damages.InputPriceWork();
-            return damages;            
+            DamagesList.Add(damages);              
         }
 
         public void OutDamages()
@@ -72,10 +61,52 @@ namespace Test_CTO
             damages.OutputType();
             damages.OutputPriceDetails();
             damages.OutputPriceWork();
-            Console.WriteLine("ReadKey");
-            Console.ReadKey();
+            //Console.WriteLine("ReadKey");
+            //Console.ReadKey();
         }
        
+        public void TestChangDamage()
+        {
+            foreach (var someDamage in DamagesList) 
+            {
+                bool a = true;
+                while(a)
+                {
+                    Console.Clear();
+                    Console.WriteLine("1. Type\n2. Price details\n3. Price work\n4. exit");
+                    byte.TryParse(Console.ReadLine(), out var someByte);
+                    if (someByte == 1)
+                    {
+                        Console.Clear();
+                        OutDamages();
+                        damages.InputType();
+                    }
+                    else if (someByte == 2)
+                    {
+                        Console.Clear();
+                        OutDamages();
+                        damages.InputPriceDetails();
+                    }
+                    else if (someByte == 3)
+                    {
+                        Console.Clear();
+                        OutDamages();
+                        damages.InputPriceWork();
+                    }
+                    else if(someByte == 4)
+                    {
+                        a = false;                        
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not a some type");
+                    }
+                }
+                if (a == false)
+                    break;
+            }
+        }
+
         public IEnumerator GetEnumerator()
         {
             yield return this;
