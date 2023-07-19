@@ -16,20 +16,20 @@ namespace Test_CTO
             {
                 Console.Clear();
                 dataBase[i].OutputCarBrand();
-                Console.WriteLine($"index {i} if next press");
-                byte.TryParse(Console.ReadLine(), out var someByte);
-
-                if (i == someByte)
+                dataBase[i].OutputCarModel();
+                dataBase[i].OutDamages();
+                if (trucks.Count - i != 1)
+                    Console.WriteLine($"\nPress space bar if want chang\nPress enter to next");
+                else
+                    Console.WriteLine($"\nPress space bar if want chang\nThis last press enter to exit");
+                var a = Console.ReadKey().Key;
+                if (a == ConsoleKey.Spacebar)
                 {
-                    dataBase[i].TestChangDamage();
-                    dataBase[i].OutDamages();
-                    //truck[someByte]
-                    //Test(someByte);
-                    //dataBase[i].OutDamages();
+                    dataBase[i].ChangDamage();
+                    dataBase[i].OutDamages();                    
                 }
                 else
-                    continue;
-                
+                    continue;                
             }
         }
         protected void Test(byte index)

@@ -17,6 +17,16 @@ namespace Test_CTO
                 dataBase[i].OutputCarBrand();
                 dataBase[i].OutputCarModel();
                 dataBase[i].OutDamages();
+                if (trucks.Count - i != 1)
+                {
+                    Console.WriteLine("\nPress enter to next");                    
+                }
+                else if (trucks.Count - i == 1) 
+                {
+                    Console.WriteLine("\nThis last Truck, enter to exit");
+                }
+                
+                Console.ReadKey();
             }
 
         }

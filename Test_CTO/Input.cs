@@ -11,12 +11,11 @@ namespace Test_CTO
         public void InputTruck() 
         {
             Truck truck = new Truck();
+            Console.Clear();
             truck.InputCarBrand();
             truck.InputCarModel();
             truck.AddDamages();
             trucks.Add(truck);
         }
-
-        
     }
 }

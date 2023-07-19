@@ -46,7 +46,7 @@
     <Compile Include="ChangingValue.cs" />
     <Compile Include="Damages.cs" />
     <Compile Include="DataBase.cs" />
-    <Compile Include="ICar.cs" />
+    <Compile Include="Some Car\ICar.cs" />
     <Compile Include="IDamages.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Output.cs" />

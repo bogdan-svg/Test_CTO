@@ -51,6 +51,10 @@ namespace Test_CTO
         {
             DamagesList = new List<IDamages>();
             damages.InputType();
+            Console.Clear();
+            OutputCarBrand();
+            OutputCarModel();
+            damages.OutputType();
             damages.InputPriceDetails();
             damages.InputPriceWork();
             DamagesList.Add(damages);              
@@ -61,11 +65,9 @@ namespace Test_CTO
             damages.OutputType();
             damages.OutputPriceDetails();
             damages.OutputPriceWork();
-            //Console.WriteLine("ReadKey");
-            //Console.ReadKey();
         }
        
-        public void TestChangDamage()
+        public void ChangDamage()
         {
             foreach (var someDamage in DamagesList) 
             {
@@ -73,6 +75,7 @@ namespace Test_CTO
                 while(a)
                 {
                     Console.Clear();
+                    OutDamages();
                     Console.WriteLine("1. Type\n2. Price details\n3. Price work\n4. exit");
                     byte.TryParse(Console.ReadLine(), out var someByte);
                     if (someByte == 1)

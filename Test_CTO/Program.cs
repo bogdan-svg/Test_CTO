@@ -18,8 +18,8 @@ namespace Test_CTO
             bool a = true;
             while (a)
             {
-                
-                Console.WriteLine("Enter :\n1. input\n2. output");
+                Console.Clear();
+                Console.WriteLine("Enter :\n1. input\n2. output\n3. Changing truck");
                 decimal.TryParse(Console.ReadLine(), out var decimalValue);
                 switch (decimalValue)
                 {
@@ -27,25 +27,19 @@ namespace Test_CTO
                         input.InputTruck();
                         break;
                     case 2:
-                        //output.OutputTrucks();
-                        changingValue.ChangingTruck();
-                        //dataBase.OutputTruck();
-                        //input = new Input();
-                        //input.OutputTruck();
+                        output.OutputTrucks();                        
                         break;
                     case 3:
+                        changingValue.ChangingTruck();
+                        break;                    
+                    case 4:
                         a = false;
                         break;
                     default:
                         Console.WriteLine("default");
                         break;
                 }
-            }
-            
-            //foreach(var car in truck)
-            //{
-            //    car.OutputName();
-            //}
+            }                        
         }
     }
 }

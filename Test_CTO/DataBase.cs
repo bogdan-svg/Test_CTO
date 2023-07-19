@@ -15,17 +15,5 @@ namespace Test_CTO
             get => trucks[index];
             set => trucks[index] = value;
         }
-
-
-
-
-        //protected void AddTrucks(Truck truck)
-        //{            
-        //    trucks.Add(truck);
-        //}        
-
-
-
-
     }
 }
